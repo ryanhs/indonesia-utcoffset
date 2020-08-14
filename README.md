@@ -1,68 +1,36 @@
-# Graphql Koa Scripts
+# indonesia UTC Offsets JS
 
-![npm](https://img.shields.io/npm/v/graphql-koa-scripts)  ![node-current](https://img.shields.io/node/v/graphql-koa-scripts)  [![Build Status](https://travis-ci.com/ryanhs/graphql-koa-scripts.svg?branch=master)](https://travis-ci.com/ryanhs/graphql-koa-scripts)  [![Coverage Status](https://coveralls.io/repos/github/ryanhs/graphql-koa-scripts/badge.svg?branch=master)](https://coveralls.io/github/ryanhs/graphql-koa-scripts?branch=master)  
-
-
-**Still Early Release**. We still test it in our own production server. Stable version **1.0** come soon!
-
-Documentation: [https://ryanhs.github.io/graphql-koa-scripts/](https://ryanhs.github.io/graphql-koa-scripts/)
-
-## Motivation
-
-This scripts made to be simplify the setup of projects. with koa + apollo graphql.
-
-I really want to make a project setup as simple as possible:
-  - `index.js`,
-  - `package.json`,
-  - `Dockerfile` (optional when needed)
-
-Thats it! no more overhead setup.
+![npm](https://img.shields.io/npm/v/indonesia-utcoffset)  [![Build Status](https://travis-ci.com/ryanhs/indonesia-utcoffset.svg?branch=master)](https://travis-ci.com/ryanhs/indonesia-utcoffset)  [![Coverage Status](https://coveralls.io/repos/github/ryanhs/indonesia-utcoffset/badge.svg?branch=master)](https://coveralls.io/github/ryanhs/indonesia-utcoffset?branch=master)
 
 
-## Example index.js
+### forSelectOptions
 
-With this enough `index.js`, graphql already setup. This what simple is?
-
-*Notes: if you use subscription on your graphql, it will automatically listen subscription-ws.*
-
-```javascript
-const { Server } = require('graphql-koa-scripts');
-
-Server({
-  configure: () => ({ PORT: 14099 }),
-
-  router(_, { graphqlHandler }) {
-    graphqlHandler({
-      typeDefs: `
-          type Query {
-            hello: String
-          }
-        `,
-      resolvers: {
-        Query: {
-          hello: () => 'Awesome!',
-        },
-      },
-      endpointUrl: '/graphql',
-    });
-  },
-})
 ```
+IndoUtcOffset.forSelectOptions =>
+[
+  { value: '+07:00', label: 'WIB' },
+  { value: '+08:00', label: 'WIT' },
+  { value: '+09:00', label: 'WITA' }
+]
+```
+
+
+### offset2label
+
+✓ offset2label(+07:00) => WIB  
+✓ offset2label(+08:00) => WIT (1 ms)  
+✓ offset2label(+09:00) => WITA  
+
+### label2offset
+
+✓ label2offset(WIB) => +07:00  
+✓ label2offset(WIT) => +08:00 (5 ms)  
+✓ label2offset(WITA) => +09:00  
 
 
 ## Installation
 
-To install just use `yarn` or `npm`. Example:
-```sh
-yarn add graphql-koa-scripts
-```
-
-
-## [Examples](https://ryanhs.github.io/graphql-koa-scripts/#/examples)
-
-
-## [API References](https://ryanhs.github.io/graphql-koa-scripts/#/API)
-
+To install just use `yarn` or `npm`. Example: `yarn add indonesia-utcoffset`
 
 ## LICENSE
 
