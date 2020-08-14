@@ -8,24 +8,24 @@
 ```
 IndoUtcOffset.forSelectOptions =>
 [
-  { value: '+07:00', label: 'WIB' },
-  { value: '+08:00', label: 'WIT' },
-  { value: '+09:00', label: 'WITA' }
+  { value: '+07:00', label: '+07:00 / WIB' },
+  { value: '+08:00', label: '+08:00 / WIT' },
+  { value: '+09:00', label: '+09:00 / WITA' }
 ]
 ```
 
-
 ### offset2label
 
-✓ offset2label(+07:00) => WIB  
-✓ offset2label(+08:00) => WIT (1 ms)  
-✓ offset2label(+09:00) => WITA  
+✓ offset2label(+07:00) => +07:00 / WIB  
+✓ offset2label(+08:00) => +08:00 / WIT  
+✓ offset2label(+09:00) => +09:00 / WITA  
 
-### label2offset
+### offset2shortLabel
 
-✓ label2offset(WIB) => +07:00  
-✓ label2offset(WIT) => +08:00 (5 ms)  
-✓ label2offset(WITA) => +09:00  
+✓ offset2shortLabel(+07:00) => +07:00 / WIB  
+✓ offset2shortLabel(+08:00) => +08:00 / WIT  
+✓ offset2shortLabel(+09:00) => +09:00 / WITA  
+
 
 
 ## Installation
