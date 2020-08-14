@@ -1,6 +1,6 @@
 {
   "name": "indonesia-utcoffset",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "-",
   "main": "lib/index.js",
   "author": "ryanhs <mr.ryansilalahi@gmail.com>",
@@ -30,8 +30,7 @@
   "bin": {
     "graphql-koa-scripts": "./src/cli/bin.js"
   },
-  "engines": {
-  },
+  "engines": {},
   "jest": {
     "testEnvironment": "node",
     "setupFilesAfterEnv": [
